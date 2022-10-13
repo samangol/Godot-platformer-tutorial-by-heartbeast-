@@ -1,0 +1,129 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/WalkingEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/MovingSpikeEnemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/StumpEnemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/Checkpoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ThaleahFat.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://World/Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemies/Spike.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -576, 0 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -558, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 6 )
+
+[node name="Level" instance=ExtResource( 1 )]
+
+[node name="Player" parent="." index="0"]
+position = Vector2( -270, -27 )
+
+[node name="TileMap" parent="." index="3"]
+tile_data = PoolIntArray( -327657, 0, 65537, -327656, 0, 65539, -262121, 0, 393217, -262120, 0, 393219, -196585, 0, 393217, -196584, 0, 393219, -131049, 0, 393217, -131048, 0, 393219, -17, 0, 65537, -16, 0, 65538, -15, 0, 65538, -14, 0, 65539, -65513, 0, 393217, -65512, 0, 393219, 65519, 0, 458753, 65520, 0, 458754, 65521, 0, 5, 65522, 0, 65540, 65523, 0, 65539, 23, 0, 393217, 24, 0, 393219, 131055, 1, 0, 131056, 1, 0, 131057, 0, 458753, 131058, 0, 458754, 131059, 0, 0, 131060, 0, 65538, 131061, 0, 65539, 65549, 0, 65537, 65550, 0, 65538, 65551, 0, 65538, 65552, 0, 65538, 65553, 0, 65538, 65554, 0, 65538, 65555, 0, 65538, 65556, 0, 65539, 65559, 0, 393217, 65560, 0, 393219, 196592, 1, 0, 196595, 0, 393217, 196596, 0, 393218, 196597, 0, 65540, 196598, 0, 65538, 196599, 0, 65538, 196600, 0, 65538, 196601, 0, 65538, 196602, 0, 65538, 196603, 0, 65538, 196604, 0, 65538, 196605, 0, 65538, 196606, 0, 65538, 196607, 0, 65538, 131072, 0, 65538, 131073, 0, 65538, 131074, 0, 65538, 131075, 0, 65538, 131076, 0, 65538, 131077, 0, 65538, 131078, 0, 65538, 131079, 0, 65538, 131080, 0, 65538, 131081, 0, 65538, 131082, 0, 65538, 131083, 0, 65538, 131084, 0, 65538, 131085, 0, 65541, 131086, 0, 393218, 131087, 0, 393218, 131088, 0, 393218, 131089, 0, 393218, 131090, 0, 393218, 131091, 0, 393218, 131092, 0, 393219, 131095, 0, 393217, 131096, 0, 393219, 262128, 1, 0, 262131, 0, 393217, 262132, 0, 393218, 262133, 0, 393218, 262134, 0, 393218, 262135, 0, 393218, 262136, 0, 393218, 262137, 0, 393218, 262138, 0, 393218, 262139, 0, 393218, 262140, 0, 393218, 262141, 0, 393218, 262142, 0, 393218, 262143, 0, 393218, 196608, 0, 393218, 196609, 0, 393218, 196610, 0, 393218, 196611, 0, 393218, 196612, 0, 393218, 196613, 0, 393218, 196614, 0, 393218, 196615, 0, 393218, 196616, 0, 393218, 196617, 0, 393218, 196618, 0, 393218, 196619, 0, 393218, 196620, 0, 393218, 196621, 0, 393218, 196622, 0, 393218, 196623, 0, 393218, 196624, 0, 393218, 196625, 0, 393218, 196626, 0, 393218, 196627, 0, 393218, 196628, 0, 393219, 196631, 0, 393217, 196632, 0, 393219, 327664, 1, 0, 327667, 0, 458753, 327668, 0, 458754, 327669, 0, 458754, 327670, 0, 458754, 327671, 0, 458754, 327672, 0, 458754, 327673, 0, 458754, 327674, 0, 458754, 327675, 0, 458754, 327676, 0, 458754, 327677, 0, 458754, 327678, 0, 458754, 327679, 0, 458754, 262144, 0, 458754, 262145, 0, 458754, 262146, 0, 458754, 262147, 0, 458754, 262148, 0, 458754, 262149, 0, 458754, 262150, 0, 458754, 262151, 0, 458754, 262152, 0, 458754, 262153, 0, 458754, 262154, 0, 458754, 262155, 0, 458754, 262156, 0, 458754, 262157, 0, 458754, 262158, 0, 458754, 262159, 0, 458754, 262160, 0, 458754, 262161, 0, 458754, 262162, 0, 458754, 262163, 0, 458754, 262164, 0, 458755, 262167, 0, 458753, 262168, 0, 458755, 393200, 1, 0, 458736, 1, 0, 524272, 1, 0, 589808, 1, 0, 589809, 1, 0, 589811, 0, 65537, 589812, 0, 65538, 589813, 0, 65538, 589814, 0, 65538, 589815, 0, 65538, 589816, 0, 65538, 589817, 0, 65538, 589818, 0, 65538, 589819, 0, 65538, 589820, 0, 65538, 589821, 0, 65538, 589822, 0, 65538, 589823, 0, 65538, 524288, 0, 65538, 524289, 0, 65538, 524290, 0, 65538, 524291, 0, 65538, 524292, 0, 65538, 524293, 0, 65538, 524294, 0, 65538, 524295, 0, 65538, 524296, 0, 65538, 524297, 0, 65538, 524298, 0, 65538, 524299, 0, 65538, 524300, 0, 65538, 524301, 0, 65538, 524302, 0, 65538, 524303, 0, 65538, 524304, 0, 65538, 524305, 0, 65538, 524306, 0, 65538, 524307, 0, 65538, 524308, 0, 65538, 524309, 0, 65538, 524310, 0, 65538, 524311, 0, 65538, 524312, 0, 65539, 655347, 0, 458753, 655348, 0, 458754, 655349, 0, 458754, 655350, 0, 458754, 655351, 0, 458754, 655352, 0, 458754, 655353, 0, 458754, 655354, 0, 458754, 655355, 0, 458754, 655356, 0, 458754, 655357, 0, 458754, 655358, 0, 458754, 655359, 0, 458754, 589824, 0, 458754, 589825, 0, 458754, 589826, 0, 458754, 589827, 0, 458754, 589828, 0, 458754, 589829, 0, 458754, 589830, 0, 458754, 589831, 0, 458754, 589832, 0, 458754, 589833, 0, 458754, 589834, 0, 458754, 589835, 0, 458754, 589836, 0, 458754, 589837, 0, 458754, 589838, 0, 458754, 589839, 0, 458754, 589840, 0, 458754, 589841, 0, 458754, 589842, 0, 458754, 589843, 0, 458754, 589844, 0, 458754, 589845, 0, 458754, 589846, 0, 458754, 589847, 0, 458754, 589848, 0, 458755, 983026, 1, 0, 983028, 1, 0, 983032, 1, 0, 983039, 1, 0, 917513, 1, 0, 917523, 1, 0, 1245213, 1, 0, 1769491, 1, 0, 2031649, 1, 0, 2686998, 1, 0 )
+
+[node name="Enemies" type="Node" parent="." index="4"]
+
+[node name="WalkingEnemy3" parent="Enemies" index="0" instance=ExtResource( 2 )]
+position = Vector2( 216, 21 )
+
+[node name="WalkingEnemy4" parent="Enemies" index="1" instance=ExtResource( 2 )]
+position = Vector2( 171, 20 )
+
+[node name="WalkingEnemy5" parent="Enemies" index="2" instance=ExtResource( 2 )]
+position = Vector2( 126, 20 )
+
+[node name="WalkingEnemy6" parent="Enemies" index="3" instance=ExtResource( 2 )]
+position = Vector2( 81, 20 )
+
+[node name="WalkingEnemy7" parent="Enemies" index="4" instance=ExtResource( 2 )]
+position = Vector2( 36, 15 )
+
+[node name="WalkingEnemy8" parent="Enemies" index="5" instance=ExtResource( 2 )]
+position = Vector2( -14, 16 )
+
+[node name="WalkingEnemy9" parent="Enemies" index="6" instance=ExtResource( 2 )]
+position = Vector2( -54, 16 )
+
+[node name="WalkingEnemy10" parent="Enemies" index="7" instance=ExtResource( 2 )]
+position = Vector2( -99, 16 )
+
+[node name="StumpEnemy" parent="Enemies" index="8" instance=ExtResource( 4 )]
+position = Vector2( 261, -198 )
+
+[node name="StumpEnemy2" parent="Enemies" index="9" instance=ExtResource( 4 )]
+position = Vector2( 279, -198 )
+
+[node name="StumpEnemy3" parent="Enemies" index="10" instance=ExtResource( 4 )]
+position = Vector2( 297, -198 )
+
+[node name="StumpEnemy4" parent="Enemies" index="11" instance=ExtResource( 4 )]
+position = Vector2( 315, -198 )
+
+[node name="StumpEnemy5" parent="Enemies" index="12" instance=ExtResource( 4 )]
+position = Vector2( 333, -198 )
+
+[node name="StumpEnemy6" parent="Enemies" index="13" instance=ExtResource( 4 )]
+position = Vector2( 351, -198 )
+
+[node name="MovingSpikeEnemy" parent="Enemies" index="14" instance=ExtResource( 3 )]
+position = Vector2( 360, 135 )
+curve = SubResource( 1 )
+animationType = 1
+
+[node name="MovingSpikeEnemy2" parent="Enemies" index="15" instance=ExtResource( 3 )]
+position = Vector2( 414, 99 )
+curve = SubResource( 2 )
+animationType = 1
+
+[node name="StumpEnemy7" parent="Enemies" index="16" instance=ExtResource( 4 )]
+position = Vector2( -261, 54 )
+
+[node name="StumpEnemy8" parent="Enemies" index="17" instance=ExtResource( 4 )]
+position = Vector2( -243, 54 )
+
+[node name="Checkpoints" type="Node" parent="." index="5"]
+
+[node name="Checkpoint" parent="Checkpoints" index="0" instance=ExtResource( 5 )]
+position = Vector2( -207, 135 )
+
+[node name="Checkpoint4" parent="Checkpoints" index="1" instance=ExtResource( 5 )]
+position = Vector2( 531, 333 )
+
+[node name="Checkpoint2" parent="Checkpoints" index="2" instance=ExtResource( 5 )]
+position = Vector2( 306, 9 )
+
+[node name="Checkpoint3" parent="Checkpoints" index="3" instance=ExtResource( 5 )]
+position = Vector2( -243, 243 )
+
+[node name="Door" parent="Checkpoints" index="4" instance=ExtResource( 7 )]
+position = Vector2( 405, 738 )
+target_level_path = "res://Levels/Control.tscn"
+
+[node name="Label" type="Label" parent="." index="6"]
+margin_left = 414.0
+margin_top = 288.0
+margin_right = 534.0
+margin_bottom = 375.0
+custom_fonts/font = SubResource( 3 )
+text = "take your chance
+:)
+|
+v
+"
+align = 1
+valign = 1
+
+[node name="Border" type="Node" parent="." index="7"]
+
+[node name="Spike" parent="Border" index="0" instance=ExtResource( 8 )]
+position = Vector2( 27, 954 )
+scale = Vector2( 100, 5 )

@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Skins/PlayerBlueSkin.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Player/MovementData/FastPlayerMovementData.tres" type="Resource" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6, 8.5 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.47546 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 90.0
+gravity = Vector3( 0, 6, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 1.0
+angular_velocity = 10.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 3.0
+scale_random = 1.0
+scale_curve = SubResource( 4 )
+color = Color( 0.792157, 0.792157, 0.792157, 0.709804 )
+
+[node name="Player" type="KinematicBody2D"]
+z_index = 10
+collision_layer = 8
+script = ExtResource( 1 )
+moveData = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -12 )
+frames = ExtResource( 2 )
+animation = "Jump"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -8.5 )
+shape = SubResource( 2 )
+
+[node name="LadderCheck" type="RayCast2D" parent="."]
+position = Vector2( 0, -12 )
+enabled = true
+cast_to = Vector2( 0, 15 )
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="JumpBufferTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="CayoteJumpTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+position = Vector2( 0, -12 )
+
+[node name="RunTrailParticles" type="Particles2D" parent="."]
+emitting = false
+amount = 64
+local_coords = false
+process_material = SubResource( 5 )
+
+[connection signal="timeout" from="JumpBufferTimer" to="." method="_on_JumpBufferTimer_timeout"]
+[connection signal="timeout" from="CayoteJumpTimer" to="." method="_on_CayoteJumpTimer_timeout"]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Player/PlayerMoveData.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+friction_m = 800
+acceleration_m = 700
+max_speed = 110
+doubleJump = 1
+jumpSpeed = -160
+jumpCut = 1.85
+gravity_m = 360
+fast_fell_m = 240
+climbSpeed = 50

@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/WalkingEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/MovingSpikeEnemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/Spike.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/Door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ThaleahFat.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 90, 0, 0, 0, 0, 36, 90, 0, 0, 0, 0, 36, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 6 )
+
+[node name="Level2" instance=ExtResource( 1 )]
+
+[node name="TileMap" parent="." index="3"]
+tile_data = PoolIntArray( -327642, 0, 65537, -327641, 0, 65539, -262106, 0, 393217, -262105, 0, 393219, -196571, 0, 65537, -196570, 0, 65541, -196569, 0, 393219, -131035, 0, 393217, -131034, 0, 393218, -131033, 0, 393219, -65508, 0, 65537, -65507, 0, 65538, -65506, 0, 65539, -65500, 0, 65537, -65499, 0, 65541, -65498, 0, 393218, -65497, 0, 393219, 28, 0, 393217, 29, 0, 393218, 30, 0, 393219, 36, 0, 393217, 37, 0, 393218, 38, 0, 393218, 39, 0, 393219, 65537, 0, 65537, 65538, 0, 65539, 65558, 0, 65537, 65559, 0, 65539, 65562, 0, 65537, 65563, 0, 65538, 65564, 0, 65541, 65565, 0, 393218, 65566, 0, 393219, 65572, 0, 393217, 65573, 0, 393218, 65574, 0, 393218, 65575, 0, 65540, 65576, 0, 65538, 65577, 0, 65538, 65578, 0, 65539, 196605, 0, 65537, 196606, 0, 65538, 196607, 0, 65538, 131072, 0, 65538, 131073, 0, 65541, 131074, 0, 65540, 131075, 0, 65538, 131076, 0, 65538, 131077, 0, 65538, 131078, 0, 65538, 131079, 0, 65539, 131084, 0, 65537, 131085, 0, 65538, 131086, 0, 65538, 131087, 0, 65539, 131092, 0, 65537, 131093, 0, 65538, 131094, 0, 65541, 131095, 0, 393219, 131098, 0, 393217, 131099, 0, 393218, 131100, 0, 393218, 131101, 0, 393218, 131102, 0, 393219, 131108, 0, 458753, 131109, 0, 458754, 131110, 0, 458754, 131111, 0, 458754, 131112, 0, 458754, 131113, 0, 458754, 131114, 0, 458755, 262141, 0, 458753, 262142, 0, 458754, 262143, 0, 458754, 196608, 0, 458754, 196609, 0, 458754, 196610, 0, 458754, 196611, 0, 458754, 196612, 0, 458754, 196613, 0, 458754, 196614, 0, 458754, 196615, 0, 458755, 196620, 0, 458753, 196621, 0, 458754, 196622, 0, 458754, 196623, 0, 458755, 196628, 0, 458753, 196629, 0, 458754, 196630, 0, 458754, 196631, 0, 458755, 196634, 0, 458753, 196635, 0, 458754, 196636, 0, 458754, 196637, 0, 458754, 196638, 0, 458755 )
+
+[node name="Enemies" type="Node" parent="." index="4"]
+
+[node name="WalkingEnemy" parent="Enemies" index="0" instance=ExtResource( 2 )]
+position = Vector2( 72, 27 )
+
+[node name="WalkingEnemy2" parent="Enemies" index="1" instance=ExtResource( 2 )]
+position = Vector2( 252, 27 )
+
+[node name="Spike" parent="Enemies" index="2" instance=ExtResource( 4 )]
+position = Vector2( 423, 18 )
+
+[node name="Spike2" parent="Enemies" index="3" instance=ExtResource( 4 )]
+position = Vector2( 495, 18 )
+
+[node name="MovingSpikeEnemy" parent="Enemies" index="4" instance=ExtResource( 3 )]
+position = Vector2( 729, -81 )
+curve = SubResource( 1 )
+
+[node name="Door" parent="Enemies" index="5" instance=ExtResource( 5 )]
+position = Vector2( 765, 18 )
+target_level_path = "res://Levels/Level1.tscn"
+
+[node name="Label" type="Label" parent="." index="5"]
+margin_left = 729.0
+margin_top = -45.0
+margin_right = 855.0
+margin_bottom = 6.0
+custom_fonts/font = SubResource( 2 )
+text = "DO YOU HAVE THE KEYS?
+"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Border" type="Node" parent="." index="6"]
+
+[node name="Spike" parent="Border" index="0" instance=ExtResource( 4 )]
+position = Vector2( 324, 504 )
+scale = Vector2( 100, 5 )

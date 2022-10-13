@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sound and music/HurtSound.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sound and music/SoundPlayer.gd" type="Script" id=2]
+
+[node name="SoundPlayer" type="Node"]
+script = ExtResource( 2 )
+
+[node name="AudioPlayers" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource( 1 )
+bus = "SoundFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource( 1 )
+bus = "SoundFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource( 1 )
+bus = "SoundFX"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource( 1 )
+bus = "SoundFX"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource( 1 )
+bus = "SoundFX"
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource( 1 )
+bus = "SoundFX"
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource( 1 )
+bus = "SoundFX"
